@@ -1,4 +1,4 @@
-import Counter from "./components/counter/Counter.jsx";
+import Counter from "./components/Counter/Counter.jsx";
 import Timer from "./components/Temp/Timer.jsx";
 import Record from "./components/Record/Record.jsx";
 import Ia from "./components/IA/Ia.jsx";
