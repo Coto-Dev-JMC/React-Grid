@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: #121212;
+  display: grid;
+  place-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 768px;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}

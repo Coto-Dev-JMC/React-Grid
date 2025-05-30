@@ -1,0 +1,56 @@
+#timer {
+  display: flex;
+  background-color: #9a9484;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: sans-serif;
+  border-radius: 8px;
+}
+
+#timer output {
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #8bb252;
+  border-radius: 8px;
+  opacity: 0.5;
+  padding: 30px 30px;
+}
+
+.button {
+  padding: 1rem 8rem;
+  background-color: #cac2bf;
+  border-radius: 8px;
+  color: rgb(13, 31, 21);
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #274131;
+  transition: all 0.1s ease-in-out;
+  & :hover {
+    background-color: #cac2bf;
+  }
+  &:active {
+    transform: translateY(4px);
+    box-shadow: none;
+  }
+
+  &.addSecond {
+  }
+  &.reduceSecond {
+  }
+  &.addMinute {
+  }
+  &.reduceMinute {
+  }
+}
+
+#clock {
+}
+#play {
+}
+#pause {
+}
+#restart {
+}

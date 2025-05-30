@@ -1,0 +1,76 @@
+#counter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#count {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 0.1rem solid transparent;
+  background-color: #1aab8a;
+  color: snow;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 240ms ease-in-out;
+  font-family: sans-serif;
+  &:hover {
+    border-color: #1aab8a;
+    color: #1aab8a;
+    background-color: transparent;
+  }
+}
+
+.button {
+  background: #1aab8a;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  &:hover {
+    background: #fff;
+    color: #1aab8a;
+    &::before {
+      width: 100%;
+      transition: 800ms all ease-in-out;
+    }
+    &::after {
+      width: 100%;
+      transition: 800ms all ease-in-out;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0.4rem;
+    width: 0px;
+    background: #1aab8a;
+    transition: 400ms ease all;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.4rem;
+    width: 0;
+    background: #1aab8a;
+    transition: 400ms ease all;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+}
