@@ -1,0 +1,41 @@
+#imgCreada {
+  width: 385px;
+  border-radius: 8px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  & button {
+    padding: 1rem 2rem;
+    background-color: #ee7b52;
+    border-radius: 8px;
+    border: none;
+    color: rgb(13, 31, 21);
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #615a57;
+    transition: all 0.1s ease-in-out;
+    &:active {
+      transform: translateY(4px);
+      box-shadow: none;
+    }
+  }
+}
+
+#form button:hover {
+  background-color: #d65e32;
+}
+
+#form input {
+  padding: 12px 20px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 166, 255, 0.1);
+}

@@ -14,6 +14,7 @@ const Prompt = () => {
 
   useEffect(() => {
     if (!validateDescription(inputDescription.current.value.trim())) return;
+
     const load = async () => {
       setUrl("");
       const endpoint = "https://api-inference.huggingface.co/models/";
@@ -30,7 +31,6 @@ const Prompt = () => {
       });
       const res = await fetch(`${endpoint}${model}`, options);
       const data = await res.blob();
-      console.clear();
       setUrl(URL.createObjectURL(data));
       setIsFeching(false);
     };
@@ -44,10 +44,12 @@ const Prompt = () => {
       {isFeching && <Loader />}
       {url && url.length > 10 && (
         <picture>
-          <img src={url} alt="" />
+          <img id={style.imgCreada} src={url} alt="" />
         </picture>
       )}
+
       <form
+        id={style.form}
         onSubmit={(e) => {
           e.preventDefault();
           setIsFeching(true);
@@ -61,9 +63,10 @@ const Prompt = () => {
               ? setDescription(e.target.value.trim())
               : null
           }
-          placeholder="Prompt para modificar"
+          placeholder="Prompt para crear imagen..."
           disabled={isFeching}
         />
+
         <button disabled={isFeching}>Enviar</button>
       </form>
     </>

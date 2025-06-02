@@ -35,22 +35,25 @@
     transform: translateY(4px);
     box-shadow: none;
   }
-
-  &.addSecond {
-  }
-  &.reduceSecond {
-  }
-  &.addMinute {
-  }
-  &.reduceMinute {
-  }
 }
 
-#clock {
-}
-#play {
-}
-#pause {
-}
 #restart {
+  padding: 1rem 3rem;
+  background-color: #a09b9a;
+  border-radius: 8px;
+  border: 2px solid black;
+  color: rgb(13, 31, 21);
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #404442;
+  transition: all 0.1s ease-in-out;
+  &:active {
+    transform: translateY(4px);
+    box-shadow: none;
+  }
+}
+
+#restart:hover {
+  background-color: #cac2bf;
 }
