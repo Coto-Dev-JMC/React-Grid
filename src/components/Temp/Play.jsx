@@ -4,7 +4,11 @@ const Play = () => {
   const { setPlay } = useTimer();
 
   return (
-    <button id={style.play} type="button" onClick={() => setPlay(true)}>
+    <button
+      className={style.buttonPlay}
+      type="button"
+      onClick={() => setPlay(true)}
+    >
       Play
     </button>
   );

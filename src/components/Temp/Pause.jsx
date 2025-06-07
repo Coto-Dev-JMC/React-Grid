@@ -4,7 +4,11 @@ const Pause = () => {
   const { setPlay } = useTimer();
 
   return (
-    <button id={style.pause} type="button" onClick={() => setPlay(false)}>
+    <button
+      className={style.buttonPause}
+      type="button"
+      onClick={() => setPlay(false)}
+    >
       Pause!
     </button>
   );

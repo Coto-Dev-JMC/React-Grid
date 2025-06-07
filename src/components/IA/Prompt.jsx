@@ -43,8 +43,8 @@ const Prompt = () => {
     <>
       {isFeching && <Loader />}
       {url && url.length > 10 && (
-        <picture>
-          <img id={style.imgCreada} src={url} alt="" />
+        <picture className={style.imgCreada}>
+          <img src={url} alt="" />
         </picture>
       )}
 

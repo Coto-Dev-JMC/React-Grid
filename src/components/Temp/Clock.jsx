@@ -25,8 +25,10 @@ const Clock = () => {
   const formattedSeconds = seconds.toString().padStart(2, "0");
 
   return (
-    <output id={style.clock}>
-      {formattedMinutes}:{formattedSeconds}
+    <output className={style.clock}>
+      <span className={style.numberSpan}>{formattedMinutes}</span>
+      <span className={style.twoDots}>:</span>
+      <span className={style.numberSpan}>{formattedSeconds}</span>
     </output>
   );
 };

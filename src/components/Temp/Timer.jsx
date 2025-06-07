@@ -23,40 +23,47 @@ const Timer = () => {
   };
 
   return (
-    <form id={style.timer}>
+    <form className={style.timer}>
       <Clock />
-      <button
-        className={`${style.button} ${style.addSeconds}`}
-        type="button"
-        onClick={addFiveSecond}
-      >
-        +5 segs
-      </button>
+      {!play && (
+        <fieldset className={style.timerBotones}>
+          <button
+            className={`${style.button} ${style.addSeconds}`}
+            type="button"
+            onClick={addFiveSecond}
+          >
+            +5 segs
+          </button>
 
-      <button
-        className={`${style.button} ${style.reduceSeconds}`}
-        type="button"
-        onClick={reduceFiveSecond}
-      >
-        -5 segs
-      </button>
-      <button
-        className={`${style.button} ${style.addMinute}`}
-        type="button"
-        onClick={addOneMinute}
-      >
-        +1 min
-      </button>
-      <button
-        className={`${style.button} ${style.reduceMinute}`}
-        type="button"
-        onClick={reduceOneMinute}
-      >
-        -1 min
-      </button>
-      {time > 0 && !play && <Play />}
-      {play && <Pause />}
-      <Restart />
+          <button
+            className={`${style.button} ${style.reduceSeconds}`}
+            type="button"
+            onClick={reduceFiveSecond}
+          >
+            -5 segs
+          </button>
+          <button
+            className={`${style.button} ${style.addMinute}`}
+            type="button"
+            onClick={addOneMinute}
+          >
+            +1 min
+          </button>
+          <button
+            className={`${style.button} ${style.reduceMinute}`}
+            type="button"
+            onClick={reduceOneMinute}
+          >
+            -1 min
+          </button>
+        </fieldset>
+      )}
+
+      <div className={style.BottomButtonsContainer}>
+        {time > 0 && !play && <Play />}
+        {play && <Pause />}
+        {time > 0 && play && <Restart />}
+      </div>
     </form>
   );
 };

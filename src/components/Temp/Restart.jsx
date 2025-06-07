@@ -7,7 +7,7 @@ const Restart = () => {
     setPlay(false);
   };
   return (
-    <button id={style.restart} type="button" onClick={handler}>
+    <button className={style.buttonRestart} type="button" onClick={handler}>
       Restart
     </button>
   );

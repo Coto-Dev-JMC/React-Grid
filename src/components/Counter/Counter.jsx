@@ -8,12 +8,14 @@ const Counter = () => {
   return (
     <form id={style.counter}>
       <output id={style.count}>{count}</output>
-      <Suspense fallback={null}>
-        <Decrease />
-      </Suspense>
-      <Suspense fallback={null}>
-        <Increase />
-      </Suspense>
+      <div className={style.botonContainer}>
+        <Suspense fallback={null}>
+          <Increase />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Decrease />
+        </Suspense>
+      </div>
     </form>
   );
 };

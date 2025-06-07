@@ -1,6 +1,6 @@
 import useRecord from "../../context/useRecord";
 import { useEffect, useRef } from "react";
-
+import style from "./Listener.module.css";
 //escuchador
 const Listener = () => {
   const {
@@ -78,19 +78,34 @@ const Listener = () => {
   return (
     <form>
       {!allow && (
-        <button type="button" onClick={pedirPermiso}>
+        <button
+          type="button"
+          className={`${style.buttonActive}`}
+          onClick={pedirPermiso}
+        >
           Activar Microfono
         </button>
       )}
 
       {allow && (
-        <button type="button" onClick={startListening}>
-          {isListening ? "Parar" : "Hablar"}
-        </button>
+        <>
+          <button
+            type="button"
+            className={`${!isListening ? style.buttonTalk : style.buttonStop}`}
+            onClick={startListening}
+          >
+            {isListening ? "Parar" : "Hablar"}
+          </button>
+          {!transcript && (
+            <p className={`${style.output}`}>
+              <strong>Dime una frase y te dare un gift</strong>
+            </p>
+          )}
+        </>
       )}
 
-      {transcript && (
-        <p>
+      {allow && transcript && (
+        <p className={`${style.output}`}>
           <strong>Frase detectada:</strong> {transcript}
         </p>
       )}

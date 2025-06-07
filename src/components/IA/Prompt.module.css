@@ -1,6 +1,15 @@
-#imgCreada {
-  width: 385px;
+.imgCreada {
+  aspect-ratio: 1/1;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   border-radius: 8px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 #form {

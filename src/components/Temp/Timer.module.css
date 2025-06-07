@@ -1,59 +1,264 @@
-#timer {
+.timer {
   display: flex;
-  background-color: #9a9484;
+  background-color: var(--background);
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  font-family: sans-serif;
-  border-radius: 8px;
+  gap: 1rem;
 }
 
-#timer output {
-  color: rgb(0, 0, 0);
-  font-size: x-large;
-  font-weight: bold;
-  background-color: #8bb252;
-  border-radius: 8px;
-  opacity: 0.5;
-  padding: 30px 30px;
+.clock {
+  width: 75%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.twoDots {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.twoDots::after,
+.twoDots::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--verde-principal);
+}
+.twoDots::after {
+  bottom: 0;
+}
+.twoDots::before {
+  top: 0;
+}
+
+.numberSpan {
+  width: 35%;
+  aspect-ratio: 1/1;
+  background-color: var(--verde-principal);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--blancont);
+  position: relative;
+}
+.numberSpan::after {
+  content: "";
+  width: 100%;
+  height: 19%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--verde-sombra);
+  border-radius: 0 0 16px 16px;
+  transition: all 0.1s ease-in-out;
+}
+
+.timerBotones {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 1rem;
+  border: none;
+  outline: none;
+  & > * {
+    border: none;
+    outline: none;
+  }
 }
 
 .button {
-  padding: 1rem 8rem;
-  background-color: #cac2bf;
-  border-radius: 8px;
-  color: rgb(13, 31, 21);
-  font-size: larger;
+  width: calc(100% / 2 - 1rem);
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 0.1rem solid var(--naranja-principal);
+  color: var(--blancont);
+  font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 10px 30px #274131;
   transition: all 0.1s ease-in-out;
-  & :hover {
-    background-color: #cac2bf;
+  position: relative;
+  outline: none;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 19%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--marron-sombra);
+    border-radius: 0 0 0.25rem 0.25rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: var(--naranja-principal);
+    border: transparent;
+    &::after {
+      opacity: 1;
+      bottom: 0;
+    }
   }
   &:active {
     transform: translateY(4px);
-    box-shadow: none;
+    border: transparent;
+    &::after {
+      opacity: 0;
+      bottom: 0;
+    }
   }
 }
 
-#restart {
-  padding: 1rem 3rem;
-  background-color: #a09b9a;
-  border-radius: 8px;
-  border: 2px solid black;
-  color: rgb(13, 31, 21);
-  font-size: larger;
+.BottomButtonsContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 1rem;
+}
+
+.buttonPlay {
+  width: calc(100% / 2 - 1rem);
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 0.1rem solid var(--naranja-principal);
+  color: var(--blancont);
+  font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 10px 30px #404442;
   transition: all 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 19%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--marron-sombra);
+    border-radius: 0 0 0.25rem 0.25rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: var(--naranja-principal);
+    border: transparent;
+    &::after {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
   &:active {
     transform: translateY(4px);
-    box-shadow: none;
+    border: transparent;
+    &::after {
+      opacity: 1;
+      bottom: 0;
+    }
   }
 }
 
-#restart:hover {
-  background-color: #cac2bf;
+.buttonRestart {
+  width: calc(100% / 2 - 1rem);
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 0.1rem solid var(--naranja-principal);
+  color: var(--blancont);
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 19%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--marron-sombra);
+    border-radius: 0 0 0.25rem 0.25rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: var(--naranja-principal);
+    border: transparent;
+    &::after {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+  &:active {
+    transform: translateY(4px);
+    border: transparent;
+    &::after {
+      opacity: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.buttonPause {
+  width: calc(100% / 2 - 1rem);
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 0.1rem solid var(--naranja-principal);
+  color: var(--blancont);
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 19%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--marron-sombra);
+    border-radius: 0 0 0.25rem 0.25rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: var(--naranja-principal);
+    border: transparent;
+    &::after {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+  &:active {
+    transform: translateY(4px);
+    border: transparent;
+    &::after {
+      opacity: 0;
+      bottom: 0;
+    }
+  }
 }
