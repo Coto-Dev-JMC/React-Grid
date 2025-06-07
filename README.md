@@ -1,12 +1,23 @@
-# React + Vite
+# 🧩 React-Grid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web desarrollada con React que combina múltiples funciones en una interfaz visual tipo panel de control, incluyendo temporizadores, control por voz, y entrada de texto para generar prompts de imagen.
 
-Currently, two official plugins are available:
+## 📸 Vista previa
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview](./proyecto.png)
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades principales
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⏱️ **Temporizador dual**: Control independiente de minutos y segundos, con botones para aumentar o disminuir el tiempo.
+- ➕➖ **Contador interactivo**: Incrementa o decrementa un valor con botones "+" y "-".
+- 🎙️ **Control por voz**: Botón para activar el micrófono y usar comandos por voz (requiere permisos del navegador), integración con GIPHY API para mostrar contenido dinámico.
+- 📝 **Generador de prompts**: Caja de texto para ingresar un prompt y botón para enviarlo, obteniendo mediante llamado a la API de HUGGING FACE, una imagen aproximada con la descripción dada.
+
+## 🚀 Cómo ejecutar el proyecto
+
+1. `git clone https://github.com/Coto-Dev-JMC/React-Grid && cd React-Grid`.
+2. `npm install`.
+3. `ir a HUGGING FACE y GIPHY DEVELOPERS, crear una cuenta, verificarla y consigue tu api TOKEN `.
+4. `Crear un archivo .env y poner ahi los TOKENS correspondientes para luego utilizarlos en la app`
+5. `npm run dev`.
+6. Abrir `http://localhost:5173` en el navegador.
